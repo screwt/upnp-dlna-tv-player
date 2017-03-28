@@ -1,13 +1,15 @@
-# Web pack angular jade coffee template
+# A video render to Tv tool using upnp dlna stack and nwjs
 
-## Start
+## Building
+
+### Start
 
  * npm install
 
-## Run server
+### Run server
 
  * npm run serve
 
-## Build
+### Build
 
  * webpack
