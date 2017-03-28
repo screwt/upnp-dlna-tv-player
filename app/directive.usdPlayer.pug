@@ -1,0 +1,33 @@
+.right(style="width:calc(100% - 270px);float:right;")
+    .sl(style="width:calc(100% - 55px);float:right;")
+            input.mdl-slider.mdl-js-slider(type="range", min="0", max="100", value="0", tabindex="0")
+    .label(style="width:55px;") Volume
+    .butt(style="margin-top:10px;")
+        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.getmdl-select(style="width:calc(100% - 100px);float:right;padding:0;margin-right:26px;")
+            input.mdl-textfield__input(id="target", readonly, placeholder="target")
+            ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu(for="target")
+                li.mdl-menu__item dcqs
+                li.mdl-menu__item qsdqsdqsdqs
+
+    
+        button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--mini-fab(style="margin-left:0px;height:20px;min-width:20px;width:20px;font-size:12px;", ng-click="togglePlaylist()")
+            i.fa.fa-list
+        button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--mini-fab(style="margin-left:10px;height:20px;min-width:20px;width:20px;font-size:12px;", ng-click="toggleLogger()")
+            i.fa.fa-info
+                
+
+        
+.left(style="width=270px;")
+     button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect
+        i.fa.fa-play
+     button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect(style="margin-left:10px;")
+         i.fa.fa-pause
+     button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect(style="margin-left:10px;")
+         i.fa.fa-stop
+     button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect(style="margin-left:10px;")
+         i.fa.fa-plus
+
+.bottom(style="margin-top:10px;")
+    .sl(style="width:calc(100% - 55px);float:right;")
+            input.mdl-slider.mdl-js-slider(type="range", min="0", max="100", value="0", tabindex="0")
+    .label(style="width:55px;") Position 

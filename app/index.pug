@@ -1,19 +1,12 @@
 html
     head
     body
-        .mdl-layout__container
-            .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
-                header.mdl-layout__header
-                    .mdl-layout__header-row
-                        span.dl-layout-title
-                            h3 Titre
-                        .mdl-layout-spacer
-                        .mdl-navigation
-                            a.mdl-navigation__link(ui-sref="home")
-                                h5 Home
-                            a.mdl-navigation__link(ui-sref="about")
-                                h5 About
-                .mdl-layout__content.docs-layout-content
-                    .mdl-components.mdl-js-components.mdl-cell.mdl-cell--12-col
-                        ui-view   
+        .mdl-layout__container(style="border: 0px solid blue;")
+            .mdl-grid.mdl-grid--no-spacing(style="border: 0px solid green;padding:0;")
+                .mdl-cell.mdl-cell--12-col(style="border: 0px solid red;margin:0;padding:10px;border-bottom: 5px solid grey;")
+                    usd-player
+                .mdl-cell.mdl-cell--12-col(style="border: 0px solid red;margin:0;border-bottom: 5px solid grey;", ng-show="showPlaylist == true")
+                    usd-playlist
+                .mdl-cell.mdl-cell--12-col(style="border: 0px solid red;margin:0;", ng-show="showLogger == true")
+                    usd-logger                    
             

@@ -16,8 +16,8 @@ module.exports = function makeWebpackConfig() {
 	loaders: [
 	    { test: /\.css$/, loader: "style-loader!css-loader"},
 	    { test: /\.coffee$/, loader: "coffee-loader"},
-	    //{ test: /app\/\.pug/, loader: ['pug-loader']}
-	    { test: /\.pug/, loader: ['html-loader', 'pug-html-loader']}
+	    { test: /\.pug/, loader: ['html-loader', 'pug-html-loader']},
+	    { test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/, loader: "file-loader"}
 	]
     }
     config.plugins = [

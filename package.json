@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "preinstall": "npm install -g webpack && npm install -g webpack-dev-server",
-      "serve": " webpack-dev-server --progress --colors --host 0.0.0.0 --port 4343"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npm install -g webpack && npm install -g webpack-dev-server",
+    "serve": " webpack-dev-server --progress --colors --host 0.0.0.0 --port 4343"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,9 @@
     "coffee-script": "^1.12.4",
     "css-loader": "^0.27.3",
     "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "font-awesome": "^4.7.0",
+    "getmdl-select": "^1.0.4",
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.28.0",
     "html-webpack-pug-plugin": "0.0.3",
