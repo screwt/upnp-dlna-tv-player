@@ -1,0 +1,18 @@
+
+.close(style="width:35px;float:left;font-size:30px;")
+    a(ng-click="toggleAddMedia()")
+        i.fa.fa-chevron-right(style="margin-top:35px;")
+    
+
+.media(style="width:calc(100% - 35px - 170px);float:left;height:calc(100%);border-left: 2px solid grey;padding-left:20px;")
+    .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label(style="width:100%;")
+        input.mdl-textfield__input(type="text", id="url", ng-model="mediaUrl")
+        label.mdl-textfield__label(for="url") Remote file URL
+
+
+    br
+    button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect local file
+
+.media(style="width: 70px;float:left;padding-top:25px;height:calc(100% - 25px);border-left: 2px solid grey;margin-left:20px;")
+    button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect(style="margin-left:10px;", ng-click="addToPlaylist()")
+        i.fa.fa-plus

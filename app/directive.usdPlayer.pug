@@ -1,21 +1,19 @@
 .right(style="width:calc(100% - 270px);float:right;")
-    .sl(style="width:calc(100% - 55px);float:right;")
+    .sl(style="width:calc(100% - 5px);float:right;")
             input.mdl-slider.mdl-js-slider(type="range", min="0", max="100", value="0", tabindex="0")
-    .label(style="width:55px;") Volume
+    .label(style="width:0px;")
+        i.fa.fa-volume-up
     .butt(style="margin-top:10px;")
-        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.getmdl-select(style="width:calc(100% - 100px);float:right;padding:0;margin-right:26px;")
-            input.mdl-textfield__input(id="target", readonly, placeholder="target")
-            ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu(for="target")
-                li.mdl-menu__item dcqs
-                li.mdl-menu__item qsdqsdqsdqs
+        input.mdl-textfield__input(readonly, placeholder="Please, select a TV", ng-model="selectedDevice.details.device.modelName", style="width:calc(100% - 120px);float:right;padding:0;margin-right:26px;margin-top:5px;", id="select-device")
 
-    
-        button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--mini-fab(style="margin-left:0px;height:20px;min-width:20px;width:20px;font-size:12px;", ng-click="togglePlaylist()")
+        ul.mdl-menu.mdl-menu--bottom-left.mdl-js-menu.mdl-js-ripple-effect(for="select-device", id="device-menu")
+            li.mdl-menu__item(ng-repeat="device in devices track by $index", ng-click="selectDevice(device)") {{device.details.device.modelName}} - {{device.details.device.serialNumber}}
+        button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--mini-fab(style="margin-left:0px;margin-top:-6px;height:20px;min-width:20px;width:20px;font-size:10px;", ng-click="togglePlaylist()", ng-class="{'mdl-button--primary': showPlaylist == true}")
             i.fa.fa-list
-        button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--mini-fab(style="margin-left:10px;height:20px;min-width:20px;width:20px;font-size:12px;", ng-click="toggleLogger()")
+        button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--mini-fab(style="margin-left:5px;margin-top:-6px;height:20px;min-width:20px;width:20px;font-size:10px;", ng-click="toggleLogger()", ng-class="{'mdl-button--primary': showLogger == true}")
             i.fa.fa-info
-                
-
+        span.ico(style="margin-left:18px;font-size:20px;")
+            i.fa.fa-tv(style="margin-top:6px;") 
         
 .left(style="width=270px;")
      button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect
@@ -24,10 +22,10 @@
          i.fa.fa-pause
      button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect(style="margin-left:10px;")
          i.fa.fa-stop
-     button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect(style="margin-left:10px;")
+     button.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect(style="margin-left:10px;", ng-click="toggleAddMedia()")
          i.fa.fa-plus
 
 .bottom(style="margin-top:10px;")
-    .sl(style="width:calc(100% - 55px);float:right;")
+    .sl(style="width:calc(100% - 0px);float:right;")
             input.mdl-slider.mdl-js-slider(type="range", min="0", max="100", value="0", tabindex="0")
-    .label(style="width:55px;") Position 
+

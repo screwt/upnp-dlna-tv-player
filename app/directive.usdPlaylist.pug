@@ -1,1 +1,7 @@
-span playlist
+ul.mdl-list(style="margin:0 0 0 0;padding:0;")
+    li.mdl-list__item.mdl-list__item--two-line.playlist-item(ng-repeat="media in playlist track by $index", style="padding: 2px 5px 5px 5px;height:40px;border-bottom:1px solid #DEDEDE;margin-top:0px;" ,ng-dblclick="launchMedia(media, $index)", ng-class="{'playlist-item-active':media.active==true}")
+
+        span.mdl-list__item-primary-content
+            span {{media}}
+            span.mdl-list__item-sub-title bla 6555
+        

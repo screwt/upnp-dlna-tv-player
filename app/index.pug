@@ -5,8 +5,9 @@ html
             .mdl-grid.mdl-grid--no-spacing(style="border: 0px solid green;padding:0;")
                 .mdl-cell.mdl-cell--12-col(style="border: 0px solid red;margin:0;padding:10px;border-bottom: 5px solid grey;")
                     usd-player
-                .mdl-cell.mdl-cell--12-col(style="border: 0px solid red;margin:0;border-bottom: 5px solid grey;", ng-show="showPlaylist == true")
+                .mdl-cell.mdl-cell--12-col(style="border: 0px solid red;margin:0;border-bottom: 0px solid grey;max-height:calc(100% - 109px);overflow-y:scroll;overflow-x:hidden;", ng-show="showPlaylist == true")
                     usd-playlist
                 .mdl-cell.mdl-cell--12-col(style="border: 0px solid red;margin:0;", ng-show="showLogger == true")
                     usd-logger                    
-            
+
+        add-media.add-media(style="position:fixed;top:0;width:calc(100% - 100px);;padding:10px;", ng-class="{'show-add-media':showAddMedia == true}")

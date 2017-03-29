@@ -12,10 +12,17 @@ module.exports = function makeWebpackConfig() {
 	path: path.resolve(__dirname, output),
 	filename: "bundle.js"
     }
+    config.externals = {
+	"@achingbrain/ssdp":"require('@achingbrain/ssdp')",
+	"node-ssdp" : "require('node-ssdp')"
+    }
     config.module = {
 	loaders: [
 	    { test: /\.css$/, loader: "style-loader!css-loader"},
-	    { test: /\.coffee$/, loader: "coffee-loader"},
+	    {
+		test: /\.coffee$/,
+		exclude: path.resolve(__dirname,"node_modules","@achingbrain","ssd"),
+		loader: "coffee-loader"},
 	    { test: /\.pug/, loader: ['html-loader', 'pug-html-loader']},
 	    { test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/, loader: "file-loader"}
 	]

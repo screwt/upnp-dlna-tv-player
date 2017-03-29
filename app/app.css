@@ -1,3 +1,25 @@
 body {
    /* background-color: #999;*/
 }
+
+.show-add-media {
+    left:100px !important;
+}
+
+.add-media{
+    left:calc(100% - 5px);
+    height:106px;
+    background-color:#FFF;
+    opacity:0.98;
+    transition: 0.5s;
+    transition-timing-function:cubic-bezier(0.2,1.03,0.85,1);
+    z-index:1000;
+}
+.playlist-item-active{
+    background-color: rgb(194,200,232);
+}
+.playlist-item{
+    /*background-color: #FFF;*/
+    transition: 0.2s;
+    transition-timing-function:cubic-bezier(0.2,1.03,0.85,1);
+}
