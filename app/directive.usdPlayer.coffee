@@ -3,7 +3,7 @@ import './directive.usdPlayer.pug'
 
 angular.module("app").directive("usdPlayer",
 ["$log", ($log )->
-    controller = ["$log","discoverySrv","$scope","$document","$rootScope","deviceSrv", ($log, discoverySrv, $scope, $document, $rootScope, deviceSrv)->
+    controller = ["$log","discoverySrv","$scope","$document","$rootScope","deviceSrv", ($log, discoverySrv, $scope, $document, $rootScope, deviceSrv)-> 
         $log.info('in usdPlayer')
         $scope.devices = discoverySrv.devices
         $scope.selectedDevice = null
@@ -14,6 +14,22 @@ angular.module("app").directive("usdPlayer",
             $log.debug("selectDevice", device, menu)
             $scope.selectedDevice = device
             return
+
+        $scope.launchSearch = ()->
+            discoverySrv.search()
+            return
+
+        $scope.stop = ()->
+            deviceSrv.stop($scope.selectedDevice)
+            return
+
+        $scope.pause = ()->
+            deviceSrv.pause($scope.selectedDevice)
+            return
+
+        $scope.play = ()->
+            deviceSrv.launchPlay($scope.selectedDevice)
+            return            
 
         $rootScope.$on("playmedia", (e, media)->
             $log.debug("playmedia", media)

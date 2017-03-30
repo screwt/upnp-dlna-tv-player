@@ -24,7 +24,8 @@ module.exports = function makeWebpackConfig() {
 		exclude: path.resolve(__dirname,"node_modules","@achingbrain","ssd"),
 		loader: "coffee-loader"},
 	    { test: /\.pug/, loader: ['html-loader', 'pug-html-loader']},
-	    { test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/, loader: "file-loader"}
+	    { test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/, loader: "file-loader"},
+	    { test: /\.xml/, loader: ['raw-loader']}
 	]
     }
     config.plugins = [
